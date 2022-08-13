@@ -4,9 +4,11 @@ async function main() {
 	const supplyChainFactory = await hre.ethers.getContractFactory('SupplyChain');
 	const supplyChain = await supplyChainFactory.deploy();
 
+	console.log('Deploying SupplyChain contract...');
+
 	await supplyChain.deployed();
 
-	console.log('SupplyChain deployed...');
+	console.log(`SupplyChain deployed to: ${supplyChain.address}`);
 }
 
 main().catch((error) => {
